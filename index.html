@@ -284,305 +284,301 @@
             margin-bottom: 1.5rem;
         }
 
+        /* BAGIAN YANG DIPERBARUI: Grid 2 Kolom */
         .project-screenshots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Memaksa 2 kolom per baris */
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
 
-.project-screenshot {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
+        .project-screenshot {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.project-screenshot img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s;
-}
+        .project-screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
 
-.project-screenshot:hover img {
-    transform: scale(1.05);
-}
+        .project-screenshot:hover img {
+            transform: scale(1.05);
+        }
 
-/* Tambahkan CSS untuk grid layout */
-.project-screenshot.full-width {
-    grid-column: 1 / -1;
-}
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ff4757;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
 
-.project-screenshot.half-width {
-    grid-column: span 1;
-}
+        .project-card.expanded .close-btn {
+            display: flex;
+        }
 
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: #ff4757;
-    color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
+        .close-btn:hover {
+            background: #e84118;
+            transform: rotate(90deg);
+        }
 
-.project-card.expanded .close-btn {
-    display: flex;
-}
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
 
-.close-btn:hover {
-    background: #e84118;
-    transform: rotate(90deg);
-}
-            /* Experience Section */
-            .timeline {
-                position: relative;
-                padding-left: 50px;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #00adb5;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -56px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #00adb5;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #00adb5;
+        }
+
+        .timeline-date {
+            color: #00adb5;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content h4 {
+            color: #666;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-content p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f4f5;
+            color: #00adb5;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #1a1a2e;
+        }
+
+        .skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: #00adb5;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-card span {
+            display: block;
+            color: #1a1a2e;
+            font-weight: 500;
+        }
+
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .certificate-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .certificate-item i {
+            font-size: 3rem;
+            color: #00adb5;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+
+        .certificate-item p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-view {
+            display: inline-block;
+            color: #00adb5;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 2rem;
+            color: #ddd;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #00adb5;
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
             }
 
-            .timeline::before {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: 100%;
-                width: 2px;
-                background: #00adb5;
+            .nav-links {
+                display: none;
             }
 
-            .timeline-item {
-                position: relative;
-                margin-bottom: 3rem;
+            .hero h1 {
+                font-size: 2.5rem;
             }
 
-            .timeline-item::before {
-                content: '';
-                position: absolute;
-                left: -56px;
-                top: 0;
-                width: 15px;
-                height: 15px;
-                border-radius: 50%;
-                background: #00adb5;
-                border: 3px solid white;
-                box-shadow: 0 0 0 3px #00adb5;
+            .about-content {
+                grid-template-columns: 1fr;
             }
 
-            .timeline-date {
-                color: #00adb5;
-                font-weight: bold;
-                margin-bottom: 0.5rem;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            .timeline-content h3 {
-                font-size: 1.3rem;
-                color: #1a1a2e;
-                margin-bottom: 0.3rem;
-            }
-
-            .timeline-content h4 {
-                color: #666;
-                margin-bottom: 0.8rem;
-            }
-
-            .timeline-content p {
-                color: #555;
-                margin-bottom: 1rem;
-            }
-
-            .tag {
-                display: inline-block;
-                background: #e8f4f5;
-                color: #00adb5;
-                padding: 0.3rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.9rem;
-                margin-right: 0.5rem;
-                margin-top: 0.5rem;
-            }
-
-            /* Skills Section */
             .skills-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                gap: 3rem;
-            }
-
-            .skill-category h3 {
-                font-size: 1.8rem;
-                margin-bottom: 2rem;
-                color: #1a1a2e;
+                grid-template-columns: 1fr;
             }
 
             .skill-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .skill-card {
-                background: white;
-                padding: 1.5rem;
-                border-radius: 10px;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                transition: all 0.3s;
+            /* Responsive screenshot untuk layar kecil agar tidak sempit */
+            .project-screenshots {
+                grid-template-columns: 1fr;
             }
-
-            .skill-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            }
-
-            .skill-card i {
-                font-size: 2.5rem;
-                color: #00adb5;
-                margin-bottom: 0.8rem;
-            }
-
-            .skill-card span {
-                display: block;
-                color: #1a1a2e;
-                font-weight: 500;
-            }
-
-            /* Certificates Section */
-            .certificates-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-
-            .certificate-item {
-                background: white;
-                padding: 2rem;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                text-decoration: none;
-                color: inherit;
-                transition: all 0.3s;
-            }
-
-            .certificate-item:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            }
-
-            .certificate-item i {
-                font-size: 3rem;
-                color: #00adb5;
-                margin-bottom: 1rem;
-            }
-
-            .certificate-item h4 {
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
-                color: #1a1a2e;
-            }
-
-            .certificate-item p {
-                color: #666;
-                margin-bottom: 1rem;
-            }
-
-            .certificate-view {
-                display: inline-block;
-                color: #00adb5;
-                font-weight: bold;
-            }
-
-            /* Footer */
-            footer {
-                background: #1a1a2e;
-                color: white;
-                padding: 3rem 0;
-                text-align: center;
-            }
-
-            footer h2 {
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            footer p {
-                margin-bottom: 2rem;
-                color: #ddd;
-            }
-
-            .social-links {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
-            }
-
-            .social-links a {
-                color: white;
-                font-size: 1.5rem;
-                width: 50px;
-                height: 50px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                transition: all 0.3s;
-            }
-
-            .social-links a:hover {
-                background: #00adb5;
-                transform: translateY(-5px);
-            }
-
-            .copyright {
-                margin-top: 2rem;
-                padding-top: 2rem;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                font-size: 0.9rem;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .hamburger {
-                    display: block;
-                }
-
-                .nav-links {
-                    display: none;
-                }
-
-                .hero h1 {
-                    font-size: 2.5rem;
-                }
-
-                .about-content {
-                    grid-template-columns: 1fr;
-                }
-
-                .projects-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .skills-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .skill-list {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-
-
-            }
+        }
     </style>
 </head>
 
@@ -656,7 +652,6 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
 
-                <!-- Front-End Website Project -->
                 <div class="project-card" onclick="toggleProject(this)">
                     <button class="close-btn"
                         onclick="event.stopPropagation(); closeProject(this.parentElement)">×</button>
@@ -680,7 +675,6 @@
                                 elements that enhance user experience.</p>
 
                             <div class="project-screenshots">
-                                <!-- Placeholder for screenshots - akan ditambahkan nanti -->
                                 <div class="project-screenshot">
                                     <div
                                         style="background: #e8f4f5; height: 200px; display: flex; align-items: center; justify-content: center; color: #00adb5;">
@@ -692,7 +686,6 @@
                     </div>
                 </div>
 
-                <!-- Niaga Tani Project -->
                 <div class="project-card" onclick="toggleProject(this)">
                     <button class="close-btn"
                         onclick="event.stopPropagation(); closeProject(this.parentElement)">×</button>
@@ -715,20 +708,19 @@
                             <p>Niaga Tani is a mobile app built in Kotlin that my team developed for the final project
                                 of our 5th semester Mobile Application Programming course. The app aims to help farmers
                                 purchase various agricultural supplies and equipment through the platform we created.
-                                Our main target users are farmers. Niaga Tani also uses MySQL as its connected database.
+                                Our main target users are farmers. Niaga Tani juga menggunakan MySQL sebagai database yang terhubung.
                             </p>
 
                             <div class="project-screenshots">
-                                <div class="project-screenshot half-width">
+                                <div class="project-screenshot">
                                     <img src="map1.png" alt="Niaga Tani Screenshot 1">
                                 </div>
-                                <div class="project-screenshot half-width">
+                                <div class="project-screenshot">
                                     <img src="map2.png" alt="Niaga Tani Screenshot 2">
                                 </div>
-                                <div class="project-screenshot half-width">
+                                <div class="project-screenshot">
                                     <img src="map3.png" alt="Niaga Tani Screenshot 3">
                                 </div>
-                                <!-- Tambahkan screenshot lainnya sesuai kebutuhan -->
                             </div>
                         </div>
                     </div>
@@ -919,12 +911,10 @@
 
     <script>
         function toggleProject(card) {
-            // Cek apakah card sudah expanded
             if (card.classList.contains('expanded')) {
-                return; // Jangan toggle jika sudah expanded (kecuali tombol close)
+                return; 
             }
             
-            // Tutup semua card yang lain
             const allCards = document.querySelectorAll('.project-card');
             allCards.forEach(c => {
                 if (c !== card) {
@@ -932,10 +922,8 @@
                 }
             });
             
-            // Toggle card yang diklik
             card.classList.add('expanded');
             
-            // Scroll ke card dengan smooth behavior
             setTimeout(() => {
                 card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }, 100);
@@ -945,7 +933,6 @@
             card.classList.remove('expanded');
         }
         
-        // Smooth scroll untuk navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
